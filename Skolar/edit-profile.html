@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skolar Edit Profile — Update your personal information, bio, and profile photo.">
+  <title>Edit Profile — Skolar</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">
+        <img src="Skolar_White.png" alt="Skolar Logo" class="logo-icon">
+        <div class="logo-text-group">
+          <span class="logo-title">Skolar</span>
+          <span class="logo-subtitle">Tutor Portal</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-item" data-page="dashboard">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="bookings.html" class="nav-item" data-page="bookings">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+            <rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/>
+          </svg>
+          <span>Bookings</span>
+        </a>
+        <a href="reviews.html" class="nav-item" data-page="reviews">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+          </svg>
+          <span>Reviews</span>
+        </a>
+        <a href="calendar.html" class="nav-item" data-page="calendar">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+          </svg>
+          <span>Calendar</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="edit-profile.html" class="nav-item active" data-page="edit-profile">
+        <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+        <span>Edit Profile</span>
+      </a>
+      <a href="settings.html" class="nav-item" data-page="settings">
+        <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span>Settings</span>
+      </a>
+      <div class="profile-card">
+        <div class="profile-avatar-small">VL</div>
+        <div class="profile-info">
+          <span class="profile-name">Vannesa L. Cainong</span>
+          <span class="profile-role">Professional Teacher</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sidebar overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ========== MAIN WRAPPER ========== -->
+  <div class="main-wrapper">
+
+    <!-- ========== TOPBAR ========== -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Edit Profile</h1>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+        </div>
+        <button class="notif-btn" id="notifBtn" aria-label="Notifications" style="position:relative;">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 01-3.46 0"/>
+          </svg>
+          <span class="notif-dot"></span>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-dropdown-item">
+              <div class="notif-dropdown-title">New Booking Request</div>
+              <div>Maria Lim requested a Math session</div>
+              <div class="notif-dropdown-time">2 minutes ago</div>
+            </div>
+            <div class="notif-dropdown-item">
+              <div class="notif-dropdown-title">Review Published</div>
+              <div>Sarah Plattos left a 5-star review</div>
+              <div class="notif-dropdown-time">1 hour ago</div>
+            </div>
+          </div>
+        </button>
+        <a href="edit-profile.html" class="topbar-avatar">VL</a>
+      </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main-content">
+
+      <!-- Card 1: Personal Information -->
+      <div class="ep-card">
+        <h2 class="ep-card-title">Personal Information</h2>
+
+        <!-- Avatar Row -->
+        <div class="ep-avatar-row">
+          <div class="ep-avatar" id="epAvatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <button class="ep-upload-btn" id="epUploadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            Upload Photo
+          </button>
+          <input type="file" id="epFileInput" class="ep-file-input" accept="image/*">
+          <button class="ep-btn-tan ep-view-btn" id="epViewProfile">View Public Profile</button>
+        </div>
+
+        <!-- Form Fields -->
+        <div class="ep-form-grid">
+          <div class="ep-field">
+            <label for="epFirstName">First Name</label>
+            <input type="text" id="epFirstName" placeholder="Enter first name">
+          </div>
+          <div class="ep-field">
+            <label for="epLastName">Last Name</label>
+            <input type="text" id="epLastName" placeholder="Enter last name">
+          </div>
+          <div class="ep-field">
+            <label for="epDisplayTitle">Display Title</label>
+            <input type="text" id="epDisplayTitle" placeholder="e.g. Professional Teacher">
+          </div>
+          <div class="ep-field">
+            <label for="epGmail">Gmail</label>
+            <input type="email" id="epGmail" placeholder="Enter email address">
+          </div>
+          <div class="ep-field">
+            <label for="epPhone">Phone Number</label>
+            <input type="tel" id="epPhone" placeholder="Enter phone number">
+          </div>
+          <div class="ep-field">
+            <label for="epLocation">Location</label>
+            <input type="text" id="epLocation" placeholder="Enter location">
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="ep-actions">
+          <button class="ep-btn-discard" id="epPersonalDiscard">Discard</button>
+          <button class="ep-btn-tan" id="epPersonalSave">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- Card 2: About Me -->
+      <div class="ep-card">
+        <h2 class="ep-card-title">About Me</h2>
+
+        <div class="ep-form-grid">
+          <div class="ep-field full-width">
+            <label for="epTagline">Short Tagline</label>
+            <input type="text" id="epTagline" placeholder="A brief description about yourself">
+          </div>
+          <div class="ep-field full-width">
+            <label for="epBio">Full Bio</label>
+            <textarea id="epBio" placeholder="Write a detailed bio about yourself, your teaching experience, and specializations..."></textarea>
+          </div>
+          <div class="ep-stats-row">
+            <div class="ep-field">
+              <label for="epYearsExp">Years of Experience</label>
+              <input type="text" id="epYearsExp" placeholder="e.g. 5 Years">
+            </div>
+            <div class="ep-field">
+              <label for="epStudentsTaught">Students Taught</label>
+              <input type="text" id="epStudentsTaught" placeholder="e.g. 50+ Students">
+            </div>
+            <div class="ep-field">
+              <label for="epSessionRate">Session Rate</label>
+              <input type="text" id="epSessionRate" placeholder="e.g. $20/hr">
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="ep-actions">
+          <button class="ep-btn-discard" id="epAboutDiscard">Discard</button>
+          <button class="ep-btn-tan" id="epAboutSave">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- Card 3: Subjects Taught -->
+      <div class="ep-card">
+        <h2 class="ep-card-title">Subjects Taught</h2>
+        
+        <div class="ep-add-row">
+          <div class="ep-field">
+            <input type="text" id="epSubjectInput" placeholder="Add a subject e.g. Filipino">
+          </div>
+          <button class="ep-btn-tan" id="epAddSubject">+ Add</button>
+        </div>
+
+        <div class="ep-subjects-list" id="epSubjectsList">
+          <!-- Dynamic subject pills will be added here -->
+        </div>
+
+        <!-- Actions -->
+        <div class="ep-actions">
+          <button class="ep-btn-discard" id="epSubjectsDiscard">Discard</button>
+          <button class="ep-btn-tan" id="epSubjectsSave">Save Changes</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="ep-toast" id="epToast"></div>
+
+  <script src="js/edit-profile.js"></script>
+</body>
+</html>
